@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.neenbedankt.android-apt'
 
 ext {
     supportLibraryVersion = "24.2.1"
@@ -44,5 +45,13 @@ dependencies {
     compile "com.android.support:support-annotations:${supportLibraryVersion}"
     compile 'com.android.support:multidex:1.0.1'
     compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha9'
+
+
+    compile "com.google.dagger:dagger:2.7"
+    compile "com.google.dagger:dagger-producers:2.7"
+
+    apt 'com.google.dagger:dagger-compiler:2.7'
+    provided 'javax.annotation:jsr250-api:1.0'
+
     testCompile 'junit:junit:4.12'
 }
