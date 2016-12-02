@@ -17,13 +17,20 @@ public class SecondActivity extends Activity {
     @Inject
     Session mSession;
 
+
+    @Inject
+    LoginPageModel loginPageModel;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Log.d(TAG,"checkSession"+(mSession != null));
+        Log.d(TAG,"checkModel"+(loginPageModel != null));
 
         ((DemoApplication) getApplication()).getApplicationComponent().plus(new SecondModule()).inject(this);
         Log.d(TAG,"checkSession"+(mSession != null));
+        Log.d(TAG,"checkModel"+(loginPageModel != null));
     }
 }
