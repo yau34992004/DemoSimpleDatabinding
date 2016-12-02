@@ -1,5 +1,6 @@
 package com.test.demo.databinding;
 
+import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
@@ -44,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void run() {
                 Log.d(TAG, "checkHandleIsWork");
+                startActivity(new Intent(getBaseContext(), SecondActivity.class));
             }
         }, 2000);
 

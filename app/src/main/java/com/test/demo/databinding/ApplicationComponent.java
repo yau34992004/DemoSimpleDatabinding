@@ -18,4 +18,7 @@ public interface ApplicationComponent {
     void inject(DemoApplication application);
 
     void inject(MainActivity activity);
+
+    SecondComponent plus(SecondModule secondModule);
+
 }
